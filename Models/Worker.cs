@@ -6,6 +6,8 @@ using System.Text;
 
 namespace Models
 {
+
+    [Table("Worker_Tbl")]
     class Worker
     {
         [Key]
