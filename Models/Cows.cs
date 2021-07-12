@@ -8,8 +8,13 @@ using System.Text;
 namespace Models
 {
     [Table("Cow_Tbl")]
-    class Cows
+    public class Cows
     {
+        public Cows()
+        {
+            MilkProductions = new HashSet<MilkProduction>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EarTagNo{ get; set; }
@@ -31,5 +36,7 @@ namespace Models
         public string WeightAtBirth { get; set; }
         [Display(Name = "Picture")] 
         public string Picture { get; set; }
+
+        public ICollection<MilkProduction> MilkProductions { get; set; }
     }
 }
